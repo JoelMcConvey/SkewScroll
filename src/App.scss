@@ -1,0 +1,58 @@
+@font-face {
+  font-family: harmond;
+  src: url("./assets/Harmond-ExtraBoldExpanded.otf");
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overscroll-behavior-y: none;
+  &:before {
+    animation: grain 8s steps(10) infinite;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/paper-pattern.png");
+    content: "";
+    height: 300%;
+    left: -50%;
+    opacity: 0.3;
+    position: fixed;
+    top: -100%;
+    width: 300%;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 5rem;
+  margin: 40px auto;
+  font-family: harmond;
+}
+
+.App {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  
+  .scroll {
+    padding: 4vh 0;
+  }
+
+  .img-container {
+    width: 700px;
+    height: 420px;
+    position: relative;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    img {
+      width: 100%;
+      position: absolute;
+    }
+  }
+}
