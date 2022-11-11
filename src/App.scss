@@ -1,11 +1,20 @@
 @font-face {
-  font-family: harmond;
-  src: url("./assets/Harmond-ExtraBoldExpanded.otf");
+  font-family: Oswald Bold;
+  src: url("./assets/oswald.bold.ttf");
 }
 
-html,
-body {
-  height: 100%;
+@font-face {
+  font-family: Oswald Regular;
+  src: url("./assets/oswald.regular.ttf");
+}
+
+@font-face {
+  font-family: Oswald Light;
+  src: url("./assets/oswald.light.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,10 +23,10 @@ body {
     animation: grain 8s steps(10) infinite;
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/paper-pattern.png");
     content: "";
-    height: 300%;
+    height: 100%;
     left: -50%;
     opacity: 0.3;
-    position: fixed;
+    position: absolute;
     top: -100%;
     width: 300%;
   }
@@ -27,32 +36,88 @@ h2 {
   text-align: center;
   font-size: 5rem;
   margin: 40px auto;
-  font-family: harmond;
+  font-family: "Oswald Bold";
 }
 
 .App {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  
+
   .scroll {
-    padding: 4vh 0;
+    padding: 0vh 0;
+  }
+
+  .team-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .team-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgb(27, 26, 26);
+    width: 48.5%;
+  }
+
+  .team-heading-1 {
+    width: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald Regular";
+  }
+
+  .team-heading-2 {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald Light";
+    letter-spacing: 1px;
   }
 
   .img-container {
     width: 700px;
     height: 420px;
     position: relative;
-    margin: 100px auto;
+    margin: 15px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     img {
       width: 100%;
+      height: 100;
       position: absolute;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {  
+  .team-container {
+    h2 {
+      font-size: 50px;
+    }
+    .team-header{
+      width: 90%;
+      .team-heading-1{
+        font-size: 15px;
+      }
+      .team-heading-2 {
+        font-size: 11px;
+      }
+    }
+    .img-container {
+      width: 90%;
+      height: 90%;
     }
   }
 }

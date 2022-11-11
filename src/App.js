@@ -36,8 +36,7 @@ function App() {
 
   //Set the height of the body to the height of the scrolling div
   const setBodyHeight = () => {
-    document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height
-      }px`;
+    document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px` / 1.8;
   };
 
   // Scrolling
@@ -64,11 +63,11 @@ function App() {
 
   return (
     <div ref={app} className="App">
-      <div ref={scrollContainer} className='scroll'>
-        {teams.map(team => {
-          return <Team key={team.teamID} team={team} />;
-        })}
-      </div>
+        <div ref={scrollContainer} className='scroll'>
+          {teams.map(team => {
+            return <Team key={team.teamID} team={team} />;
+          })}
+        </div>
     </div>
   );
 }
